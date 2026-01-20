@@ -32,7 +32,13 @@
 {% if download %}
 <div class="result-box" style="text-align: center;">
     <p>Encryption Successful!</p>
-    <a href="/download/{{ download }}" style="color: #00ff00; font-weight: bold;">Download Encrypted Image</a>
+    <div style="margin: 1rem 0;">
+        <p>Preview of Encrypted Image:</p>
+        <img src="/download/{{ download }}" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+    </div>
+    <a href="/download/{{ download }}" style="color: #00ff00; font-weight: bold; text-decoration: none;">
+        <button type="button" style="width: auto; padding: 0.5rem 2rem; background: #28a745;">Download Encrypted Image</button>
+    </a>
 </div>
 {% endif %}
 {% endblock %}
