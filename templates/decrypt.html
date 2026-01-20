@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Decryption Option</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Upload the Encrypted Image:</label>
+        <input type="file" name="image" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+        <label>Enter Secret Key:</label>
+        <input type="password" name="key" required placeholder="Enter the key used for encryption">
+    </div>
+
+    <button type="submit">Decrypt & Extract Data</button>
+</form>
+
+{% if result %}
+<div class="result-box">
+    <h3>Decrypted Message:</h3>
+    <p style="word-wrap: break-word;">{{ result }}</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to Steganography AES</h1>
+<p style="text-align: center; line-height: 1.6;">
+    Secure your messages within images using the industry-standard AES encryption algorithm. 
+    Our tool allows you to hide sensitive data in plain sight.
+</p>
+<div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+    <a href="/encrypt" style="text-decoration: none;"><button style="width: 200px;">Start Encrypting</button></a>
+    <a href="/decrypt" style="text-decoration: none;"><button style="width: 200px; background: #333;">Start Decrypting</button></a>
+</div>
+{% endblock %}

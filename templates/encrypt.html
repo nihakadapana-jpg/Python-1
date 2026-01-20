@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Encryption Option</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Select an Image for Steganography:</label>
+        <div class="suggestion-grid">
+            {% for img in suggestions %}
+            <div class="suggestion-item" onclick="selectSuggestion('{{ img }}', this)">
+                <img src="/static/suggestions/{{ img }}" alt="Suggestion">
+            </div>
+            {% endfor %}
+        </div>
+        <p style="text-align: center;">OR</p>
+        <input type="file" name="image" accept="image/*">
+        <input type="hidden" name="suggested_image" id="suggested_image_input">
+    </div>
+
+    <div class="form-group">
+        <label>Enter Secret Data to Hide:</label>
+        <textarea name="text" rows="4" required placeholder="Type your secret message here..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Enter Secret Key (AES):</label>
+        <input type="password" name="key" required placeholder="Enter key (e.g. 16 characters)">
+    </div>
+
+    <button type="submit">Encrypt & Hide Data</button>
+</form>
+
+{% if download %}
+<div class="result-box" style="text-align: center;">
+    <p>Encryption Successful!</p>
+    <a href="/download/{{ download }}" style="color: #00ff00; font-weight: bold;">Download Encrypted Image</a>
+</div>
+{% endif %}
+{% endblock %}

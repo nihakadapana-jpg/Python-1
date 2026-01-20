@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>How to Use</h2>
+<div style="line-height: 1.8;">
+    <h3>Step 1: Encryption</h3>
+    <ul>
+        <li>Go to the <strong>Encryption</strong> page.</li>
+        <li>Select one of our suggested images or upload your own.</li>
+        <li>Enter the message you want to hide in the text area.</li>
+        <li>Enter a secret key. <strong>Remember this key!</strong> You will need it to decrypt the message later.</li>
+        <li>Click "Encrypt & Hide Data".</li>
+        <li>Download the resulting image. It looks like a normal image but contains your secret!</li>
+    </ul>
+
+    <h3>Step 2: Decryption</h3>
+    <ul>
+        <li>Go to the <strong>Decryption</strong> page.</li>
+        <li>Upload the image that you previously encrypted.</li>
+        <li>Enter the same secret key you used during encryption.</li>
+        <li>Click "Decrypt & Extract Data" to see your hidden message.</li>
+    </ul>
+</div>
+{% endblock %}
